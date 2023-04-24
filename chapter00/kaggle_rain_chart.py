@@ -56,26 +56,29 @@ sns.set_style('whitegrid')
 plt.subplot(2, 2, 1)
 plt.title('Maximum Temperature variation over the years', fontweight='bold', fontsize=20)
 plt.xlabel('MaxTemp', fontweight='bold', fontsize=16)
-sns.displot(weather['MaxTemp'], color='indigo', bins=25)
+sns.distplot(weather['MaxTemp'], color='indigo', bins=25)
 
 # Minimum Temperature
 plt.subplot(2, 2, 2)
 plt.title('Minimum Temperature variation over the years', fontweight='bold', fontsize=20)
 plt.xlabel('MinTemp', fontweight='bold', fontsize=16)
-sns.displot(weather['MinTemp'], color='blue')
+sns.distplot(weather['MinTemp'], color='blue')
 
 # Sunshine
 plt.subplot(2, 2, 3)
 plt.title('Sunshine over the years', fontweight='bold', fontsize=20)
 plt.xlabel('Sunshine', fontweight='bold', fontsize=16)
-sns.displot(weather['Sunshine'], color='green', bins=50)
+sns.distplot(weather['Sunshine'], color='green', bins=50)
 
 # Evaporation 蒸發 
 plt.subplot(2, 2, 4)
 plt.title('Evaporation over the years', fontweight='bold', fontsize=20)
 plt.xlabel('Evaporation', fontweight='bold', fontsize=16)
-sns.displot(weather['Evaporation'], color='red', bins=50)
+sns.distplot(weather['Evaporation'], color='red', bins=50)
 
 print('\033[1m' + 'The mean max. temp. is: ', weather['MaxTemp'].mean())
+print('\033[1m' + 'The mean min. temp. is: ', weather['MinTemp'].mean())
+print('\033[1m' + 'The mean sunshine over the years is: ', weather['Sunshine'].mean())
+print('\033[1m' + 'The mean evaporation over the years is: ', weather['Evaporation'].mean())
 
 plt.show()
